@@ -1,2 +1,2 @@
 # carousel
-assigment for tech grounds
+carousel assigment for tech grounds
