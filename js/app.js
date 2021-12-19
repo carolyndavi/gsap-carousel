@@ -1,14 +1,14 @@
 'use strict';
 
-let carousel = document.querySelector('.carousel');
-let container = carousel.querySelector('.carousel-container');
-let prevBtn = carousel.querySelector('.carousel-prev');
-let nextBtn = carousel.querySelector('.carousel-next');
-let navigation = carousel.querySelector('.carousel-navigation');
-let bullets = [].slice.call(carousel.querySelectorAll('.carousel-bullet'));
-let totalItems = container.querySelectorAll('.carousel-item').length;
+const carousel = document.querySelector('.carousel');
+const container = carousel.querySelector('.carousel-container');
+const prevBtn = carousel.querySelector('.carousel-prev');
+const nextBtn = carousel.querySelector('.carousel-next');
+const navigation = carousel.querySelector('.carousel-navigation');
+const bullets = [].slice.call(carousel.querySelectorAll('.carousel-bullet'));
+const totalItems = container.querySelectorAll('.carousel-item').length;
 
-let percent = 100 / totalItems;
+const percent = 100 / totalItems;
 let currentIndex = 0;
 
 const next = () => {
