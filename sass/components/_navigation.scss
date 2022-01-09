@@ -1,19 +1,24 @@
 .carousel-navigation {
   position: relative;
+  z-index: 40;
+}
+
+.navigation {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: row;
-  bottom: 180px;
+  top: 23rem;
 }
 
-.carousel-indicator.current-slide {
-  background-color: var(--color-primary);
-}
-
-.carousel-indicator {
+.navigation-indicator {
   margin: 0 3px;
   width: 30px;
-  height: 2px;
+  height: 6px;
   background-color: transparent;
   background-color: var(--color-secondary);
+
+  &.current-navigation {
+    background-color: var(--color-primary);
+  }
 }
