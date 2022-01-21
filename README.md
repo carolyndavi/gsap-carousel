@@ -1,2 +1,2 @@
 # carousel
-this is a carousel created with gsap animations
+this is a weather app created with react
