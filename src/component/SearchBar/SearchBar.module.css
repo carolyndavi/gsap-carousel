@@ -1,0 +1,53 @@
+.SearchBarWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 3rem auto;
+}
+
+.InputFieldWrapper input {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  line-height: normal;
+  font-size: 1.5rem;
+  color: var(--color-gray);
+  border: none;
+  border-bottom: 2px solid var(--color-white);
+  background: none;
+}
+
+.InputFieldWrapper input::placeholder {
+  color: var(--color-gray-medium);
+  opacity: 1;
+  line-height: normal !important;
+}
+
+.InputFieldWrapper input:focus,
+.InputFieldWrapper input:active {
+  outline: none;
+}
+
+.ButtonWrapper button {
+  padding-top: 1rem;
+  color: var(--color-gray);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  background: none;
+}
+
+.ButtonWrapper button:hover {
+  cursor: pointer;
+  color: var(--color-white);
+  transition: color 1s ease;
+}
+
+.ButtonWrapper button:active,
+.ButtonWrapper button:focus {
+  outline: none;
+}
