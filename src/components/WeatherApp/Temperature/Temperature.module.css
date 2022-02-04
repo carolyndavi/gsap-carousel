@@ -1,0 +1,7 @@
+.TemperatureWrapper {
+  font-size: 1.75rem;
+}
+
+.TemperatureWrapper .TemperatureSymbol {
+  font-size: 1.125rem;
+}

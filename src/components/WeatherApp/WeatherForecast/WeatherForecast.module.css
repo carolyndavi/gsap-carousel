@@ -1,0 +1,57 @@
+.ForecastWrapper {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s;
+  text-transform: capitalize;
+}
+
+.Day {
+  letter-spacing: 1.5px;
+  font-size: 1.25rem;
+}
+
+.ForecastItem {
+  color: var(--color-white);
+  min-width: 90px;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.Icon {
+  width: 5.875rem;
+  margin: 0 auto;
+}
+
+.Temperature {
+  font-size: 1.45rem;
+}
+
+.TemperatureSymbol {
+  font-size: 1.25rem;
+}
+
+hr {
+  color: var(--color-gray);
+  width: 100%;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
