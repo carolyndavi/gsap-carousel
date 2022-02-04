@@ -1,0 +1,19 @@
+.SearchBarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 3rem auto;
+}
+
+.SearchBarWrapper .SearchBarForm {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+  .SearchBarWrapper .SearchBarForm {
+    display: flex;
+    flex-direction: row;
+  }
+}
