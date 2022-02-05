@@ -1,2 +1,2 @@
 # weather-app
-a weather app created with react
+weather app assignment for techgrounds, created with react
