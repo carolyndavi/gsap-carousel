@@ -1,10 +1,22 @@
 import { useEffect, useState } from 'react'
-import styles from './WeatherForecast.module.css'
-import { getDays } from '../../../helpers/helper'
+import './WeatherForecast.css'
+import { getDays } from '../../../helpers/getDays'
+import { FiPlus, FiMinus } from 'react-icons/fi'
+import { IconContext } from 'react-icons'
 
 function WeatherForecast(props) {
   const { latitude, longitude } = props
   const [forecastData, setForecastData] = useState([])
+  const [clicked, setClicked] = useState(false)
+
+  const toggle = (index) => {
+    if (clicked === index) {
+      return setClicked(null)
+    }
+
+    setClicked(index)
+  }
+
   const api_key = process.env.REACT_APP_WEATHER_API_KEY
 
   let dayCounter = -1
@@ -25,32 +37,42 @@ function WeatherForecast(props) {
   }, [latitude, longitude])
 
   return (
-    <div className={styles.ForecastWrapper}>
-      {forecastData.map((data, key) => {
-        dayCounter = dayCounter + 1
-        return (
-          <>
-            <div className={styles.ForecastItem}>
-              <div className={styles.Day}>{dayCounter === 0}</div>
-              <div className={styles.Icon}>
-                <img
-                  src={require(`../../../assets/${data.weather[0].description}.svg`)}
-                />
-              </div>
-              <span className={styles.Day}>{weeklyDays[dayCounter]}</span>
-              <div className={styles.Temperature}>
-                {Math.round(data.temp.day)}
-                <span className={styles.TemperatureSymbol}>&deg;C &nbsp;</span>
-              </div>
-              <div className={styles.Description}>
-                {data.weather[0].description}
-              </div>
-            </div>
-            <hr />
-          </>
-        )
-      })}
-    </div>
+    <IconContext.Provider value={{ color: '#fff', size: '25px' }}>
+      <div className='forecastWrapper'>
+        <div className='forecastItem'>
+          {forecastData.map((data, index) => {
+            dayCounter = dayCounter + 1
+            return (
+              <>
+                <div className='item'>
+                  <div className='title' onClick={() => toggle(index)}>
+                    <h3 className='day'>{weeklyDays[dayCounter]}</h3>
+                    <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
+                  </div>
+                  <div
+                    className={clicked === index ? 'content show' : 'content'}
+                  >
+                    <div className='icon'>
+                      <img
+                        src={require(`../../../assets/${data.weather[0].description}.svg`)}
+                      />
+                    </div>
+
+                    <div className='temperature'>
+                      {Math.round(data.temp.day)}
+                      <span className='temperatureSymbol'>&deg;C &nbsp;</span>
+                    </div>
+                    <div className='description'>
+                      {data.weather[0].description}
+                    </div>
+                  </div>
+                </div>
+              </>
+            )
+          })}
+        </div>
+      </div>
+    </IconContext.Provider>
   )
 }
 
