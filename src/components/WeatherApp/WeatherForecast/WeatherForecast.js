@@ -51,7 +51,7 @@ function WeatherForecast(props) {
                   </div>
                   <div
                     className={
-                      clicked === index ? styles.Content.Show : styles.Content
+                      clicked === index ? styles.Content.show : styles.Content
                     }
                   >
                     <div className={styles.Icon}>
