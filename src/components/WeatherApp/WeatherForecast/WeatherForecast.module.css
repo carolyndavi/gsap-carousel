@@ -1,4 +1,4 @@
-.forecastWrapper {
+.ForecastWrapper {
   display: flex;
   justify-content: start;
   flex-direction: column;
@@ -7,12 +7,12 @@
   text-transform: capitalize;
 }
 
-.day {
+.Day {
   letter-spacing: 1.5px;
   font-size: 1.25rem;
 }
 
-.forecastItem {
+.ForecastItem {
   color: var(--color-white);
   min-width: 90px;
   text-align: center;
@@ -20,41 +20,39 @@
   padding-bottom: 1rem;
 }
 
-.temperature {
+.Temperature {
   font-size: 1.45rem;
 }
 
-.temperatureSymbol {
+.TemperatureSymbol {
   font-size: 1.15rem;
 }
 
-.item {
+.Item {
   margin-bottom: 5px;
   padding: 10px 20px;
 }
 
-.title {
+.Title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 }
 
-.icon {
+.Icon {
   width: 8.875rem;
   margin: 0 auto;
 }
 
-.content {
+.Content {
   max-height: 0;
   overflow: hidden;
-  transition: all 2s ease;
 }
 
-.content.show {
+.Content.show {
   height: auto;
   max-height: 9999px;
-  transition: all 2s ease;
 }
 
 @keyframes fadein {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './WeatherForecast.css'
+import styles from './WeatherForecast.module.css'
 import { getDays } from '../../../helpers/getDays'
 import { FiPlus, FiMinus } from 'react-icons/fi'
 import { IconContext } from 'react-icons'
@@ -34,35 +34,40 @@ function WeatherForecast(props) {
       .catch((error) => {
         console.log(error)
       })
-  }, [latitude, longitude])
+  })
 
   return (
     <IconContext.Provider value={{ color: '#fff', size: '25px' }}>
-      <div className='forecastWrapper'>
-        <div className='forecastItem'>
+      <div className={styles.ForecastWrapper}>
+        <div className={styles.ForecastItem}>
           {forecastData.map((data, index) => {
             dayCounter = dayCounter + 1
             return (
               <>
-                <div className='item'>
-                  <div className='title' onClick={() => toggle(index)}>
-                    <h3 className='day'>{weeklyDays[dayCounter]}</h3>
+                <div className={styles.Item}>
+                  <div className={styles.Title} onClick={() => toggle(index)}>
+                    <h3 className={styles.Day}>{weeklyDays[dayCounter]}</h3>
                     <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
                   </div>
                   <div
-                    className={clicked === index ? 'content show' : 'content'}
+                    className={
+                      clicked === index ? styles.Content.Show : styles.Content
+                    }
                   >
-                    <div className='icon'>
+                    <div className={styles.Icon}>
                       <img
                         src={require(`../../../assets/${data.weather[0].description}.svg`)}
+                        alt='Weather Icon'
                       />
                     </div>
 
-                    <div className='temperature'>
+                    <div className={styles.Temperature}>
                       {Math.round(data.temp.day)}
-                      <span className='temperatureSymbol'>&deg;C &nbsp;</span>
+                      <span className={styles.TemperatureSymbol}>
+                        &deg;C &nbsp;
+                      </span>
                     </div>
-                    <div className='description'>
+                    <div className={styles.Description}>
                       {data.weather[0].description}
                     </div>
                   </div>
