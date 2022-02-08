@@ -34,7 +34,7 @@ function WeatherForecast(props) {
       .catch((error) => {
         console.log(error)
       })
-  })
+  }, [longitude, latitude])
 
   return (
     <IconContext.Provider value={{ color: '#fff', size: '25px' }}>
@@ -51,7 +51,7 @@ function WeatherForecast(props) {
                   </div>
                   <div
                     className={
-                      clicked === index ? styles.Content.Show : styles.Content
+                      clicked === index ? styles.ContentShow : styles.Content
                     }
                   >
                     <div className={styles.Icon}>

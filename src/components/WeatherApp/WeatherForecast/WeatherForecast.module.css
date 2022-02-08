@@ -48,11 +48,13 @@
 .Content {
   max-height: 0;
   overflow: hidden;
+  transition: all 2s ease;
 }
 
-.Content.show {
+.ContentShow {
   height: auto;
   max-height: 9999px;
+  transition: all 2s ease;
 }
 
 @keyframes fadein {
