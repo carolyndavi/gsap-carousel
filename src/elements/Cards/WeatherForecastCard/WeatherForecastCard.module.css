@@ -1,0 +1,20 @@
+.CardWrapper {
+  border-radius: 15px;
+  box-shadow: var(--main-box-shadow);
+  background-color: var(--bg-color-card);
+  color: var(--main-text-color);
+  overflow-x: scroll;
+}
+
+@media only screen and (min-width: 600px) {
+  .CardWrapper {
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .CardWrapper {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}

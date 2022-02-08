@@ -1,0 +1,19 @@
+.ImageWrapper {
+  margin: 0 auto;
+  position: relative;
+  top: 55px;
+}
+
+.Image {
+  width: 20rem;
+}
+
+@media only screen and (min-width: 400px) {
+  .ImageWrapper {
+    top: -10px;
+  }
+
+  .Image {
+    width: 25rem;
+  }
+}

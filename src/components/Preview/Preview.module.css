@@ -1,0 +1,32 @@
+.Preview {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin: auto;
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s;
+}
+
+@media only screen and (min-width: 600px) {
+  .Preview {
+    max-width: 200px;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
